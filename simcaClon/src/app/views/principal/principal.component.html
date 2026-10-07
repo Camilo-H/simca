@@ -1,1 +1,110 @@
-<p>principal works!</p>
+<div class="portal-container">
+  <header class="portal-header">
+    <div class="portal-brand">
+      <img src="../../../assets/logo.png" alt="Universidad del Cauca" />
+      <span class="portal-divider" aria-hidden="true"></span>
+      <img class="portal-simca-logo" src="../../../assets/logo-simca.png" alt="SIMCA" />
+    </div>
+  </header>
+
+  <main class="portal-content">
+    <nav class="portal-breadcrumbs" aria-label="Ruta de navegación">
+      <a href="#student">Estudiante</a>
+      <span class="breadcrumb-program">{{ demoStudent.program }}</span>
+      <a href="#debts">Deudas</a>
+      <button type="button" class="logout-button" (click)="logoutRequested.emit()">
+        <span aria-hidden="true">⏻</span> Cerrar Sesión
+      </button>
+    </nav>
+
+    <section class="student-section" id="student">
+      <h1 class="section-heading">Estudiante</h1>
+
+      <div class="student-card">
+        <div class="student-avatar" aria-hidden="true">E</div>
+
+        <dl class="student-data">
+          <div class="data-row data-row-program">
+            <dt>Programa:</dt>
+            <dd>{{ demoStudent.program }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>ID Pensum:</dt>
+            <dd>{{ demoStudent.curriculumId }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Código:</dt>
+            <dd>{{ demoStudent.code }}, Usuario: {{ demoStudent.username }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Promedio Carrera:</dt>
+            <dd>{{ demoStudent.average }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Promedio Semestre Anterior:</dt>
+            <dd>{{ demoStudent.previousAverage }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Semestre:</dt>
+            <dd>{{ demoStudent.semester }}</dd>
+          </div>
+          <div class="data-row data-row-policy">
+            <dt>Política Gratuidad:</dt>
+            <dd>{{ demoStudent.gratuity }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Periodos aprobados:</dt>
+            <dd>{{ demoStudent.approvedPeriods }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Periodos financiados:</dt>
+            <dd>{{ demoStudent.fundedPeriods }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Periodos a financiar:</dt>
+            <dd>{{ demoStudent.periodsToFund }}</dd>
+          </div>
+        </dl>
+
+        <dl class="student-data personal-data">
+          <div class="data-row">
+            <dt>Nombres:</dt>
+            <dd>{{ demoStudent.name }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Identificación:</dt>
+            <dd>{{ demoStudent.identification }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Tipo de identificación:</dt>
+            <dd>{{ demoStudent.identificationType }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Municipio de expedición del documento:</dt>
+            <dd>{{ demoStudent.documentCity }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Fecha de nacimiento:</dt>
+            <dd>{{ demoStudent.birthDate }}</dd>
+          </div>
+          <div class="data-row">
+            <dt>Estado:</dt>
+            <dd>{{ demoStudent.status }}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="debts-section" id="debts" aria-label="Estado de deudas">
+      No existen deudas de demostración registradas.
+    </section>
+  </main>
+
+  <footer class="portal-footer">
+    <p>2026 | División de Tecnologías de la Información y las Comunicaciones</p>
+    <p>
+      Universidad del Cauca |
+      <a href="mailto:simca@unicauca.edu.co">simca@unicauca.edu.co</a>
+    </p>
+  </footer>
+</div>

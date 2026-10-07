@@ -1,0 +1,312 @@
+.portal-container {
+  min-height: 100vh;
+  background: #f1f2f3;
+  color: #50616c;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.portal-header {
+  position: relative;
+  display: flex;
+  min-height: 102px;
+  align-items: center;
+  overflow: hidden;
+  padding: 12px max(24px, calc((100% - 1160px) / 2));
+  background: linear-gradient(110deg, #07568a, #087eb0 58%, #034477);
+}
+
+.portal-header::after {
+  position: absolute;
+  right: -12px;
+  bottom: -48px;
+  width: 260px;
+  height: 125px;
+  background: url("../../../assets/bandera.png") center / contain no-repeat;
+  content: "";
+}
+
+.portal-brand {
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.portal-brand > img:first-child {
+  width: 175px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.portal-divider {
+  width: 2px;
+  height: 58px;
+  background: #ffffffc9;
+}
+
+.portal-brand .portal-simca-logo {
+  width: 142px;
+  height: auto;
+}
+
+.portal-content {
+  width: min(1160px, calc(100% - 40px));
+  margin: 18px auto 30px;
+}
+
+.portal-breadcrumbs {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border: 1px solid #bfd0d8;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 2px #0000000c;
+  font-size: 14px;
+}
+
+.portal-breadcrumbs a {
+  flex: 0 0 auto;
+  color: #547083;
+  text-decoration: none;
+}
+
+.portal-breadcrumbs a::before {
+  margin-right: 6px;
+  color: #2682ae;
+  content: "›";
+}
+
+.breadcrumb-program {
+  overflow: hidden;
+  color: #627780;
+  text-overflow: ellipsis;
+}
+
+.logout-button {
+  flex: 0 0 auto;
+  min-height: 40px;
+  margin-left: auto;
+  padding: 0 15px;
+  border: 1px solid #bfd0d8;
+  border-radius: 4px;
+  background: linear-gradient(#fff, #e6eef1);
+  color: #4e758d;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logout-button span {
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+.student-section {
+  margin-top: 24px;
+}
+
+.section-heading {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 0 18px;
+  border: 1px solid #6fa7c9;
+  border-radius: 5px;
+  background: linear-gradient(#83b9d9, #5398c1);
+  box-shadow: 0 2px 3px #0000001a;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.student-card {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+}
+
+.student-avatar {
+  display: grid;
+  width: 92px;
+  height: 108px;
+  place-items: center;
+  border: 8px solid #d1e0e5;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #f7fbfc, #a9c4cf);
+  color: #7e9fac;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.student-data {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #c0d0d5;
+  border-radius: 5px;
+  background: #d4e1e5;
+}
+
+.data-row {
+  display: flex;
+  min-height: 36px;
+  align-items: baseline;
+  gap: 5px;
+  padding: 7px 11px;
+  border-bottom: 1px solid #b6c7ce;
+  font-size: 14px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.data-row:last-child {
+  border-bottom: 0;
+}
+
+.data-row dt,
+.data-row dd {
+  display: inline;
+  margin: 0;
+}
+
+.data-row dt {
+  flex: 0 0 auto;
+  font-weight: 600;
+}
+
+.data-row-program,
+.data-row-policy {
+  display: block;
+}
+
+.data-row-program dd,
+.data-row-policy dd {
+  margin-left: 4px;
+}
+
+.debts-section {
+  margin: 24px 0 0 106px;
+  padding: 15px 18px;
+  border: 1px solid #c5d6dc;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.portal-footer {
+  padding: 20px 16px;
+  background: #07558a;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.portal-footer p {
+  margin: 0;
+}
+
+.portal-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portal-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+  .portal-header {
+    min-height: 82px;
+    padding: 8px 16px;
+  }
+
+  .portal-brand {
+    gap: 12px;
+  }
+
+  .portal-brand > img:first-child {
+    width: 145px;
+    height: 62px;
+  }
+
+  .portal-divider {
+    height: 44px;
+  }
+
+  .portal-brand .portal-simca-logo {
+    width: 105px;
+  }
+
+  .portal-content {
+    width: calc(100% - 24px);
+    margin-top: 12px;
+  }
+
+  .portal-breadcrumbs {
+    min-height: auto;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    padding: 12px;
+  }
+
+  .breadcrumb-program {
+    order: 3;
+    flex: 1 1 100%;
+    white-space: normal;
+  }
+
+  .logout-button {
+    min-height: 38px;
+    margin-left: auto;
+  }
+
+  .student-section {
+    margin-top: 18px;
+  }
+
+  .student-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .student-avatar {
+    width: 76px;
+    height: 76px;
+    border-width: 5px;
+    font-size: 38px;
+  }
+
+  .data-row {
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .debts-section {
+    margin: 16px 0 0;
+  }
+
+  .portal-footer {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .portal-brand {
+    gap: 9px;
+  }
+
+  .portal-brand > img:first-child {
+    width: 125px;
+    height: 54px;
+  }
+
+  .portal-brand .portal-simca-logo {
+    width: 90px;
+  }
+}

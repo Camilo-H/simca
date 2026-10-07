@@ -1,224 +1,137 @@
-/* =========================================================
-   CONTENEDOR PRINCIPAL
-   ========================================================= */
+:host {
+  display: block;
+  min-height: 100%;
+  font-family: Vegur, "Arial Narrow", Arial, sans-serif;
+}
 
 .simca-container {
   position: relative;
-
-  width: 100%;
-  height: 100vh;
+  display: flex;
   min-height: 100vh;
-
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-
-  background-image: url("../../../assets/background.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #ffffff;
+  background: #10477f url("../../../assets/background.png") center / cover fixed;
+  color: #fff;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+.antorcha,
+.bandera {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.antorcha {
+  top: 0;
+  right: 10%;
+  width: 250px;
+  height: 590px;
+  object-fit: contain;
+}
+
+.bandera {
+  bottom: 0;
+  left: 0;
+  width: min(420px, 38vw);
+}
 
 .simca-header {
   position: absolute;
-
+  z-index: 2;
   top: 30px;
   left: 50%;
-
-  transform: translateX(-50%);
-
   display: flex;
-  align-items: center;
-
+  align-items: flex-start;
   width: max-content;
-
-  z-index: 10;
+  transform: translateX(-50%);
 }
-
-/* Logo Universidad del Cauca */
 
 #logoU {
   display: block;
-
   width: 188px;
   height: 92px;
-
   margin-right: 10px;
-
-  background-image: url("../../../assets/logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  text-decoration: none;
+  background: url("../../../assets/logo.png") center / contain no-repeat;
 }
-
-/* Separador vertical */
 
 .separador {
-  display: block;
-
   width: 2px;
   height: 40px;
-
-  margin: 0 10px;
-
-  background-image: url("../../../assets/barra.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  margin: 25px 10px 0 0;
+  background: url("../../../assets/barra.png") center / contain no-repeat;
 }
-
-/* Texto del encabezado */
 
 #desc {
   width: 235px;
-
-  margin: 0;
-
-  color: #ffffff;
-
+  margin: 0 0 10px;
+  padding-top: 27px;
   font-size: 16px;
-  font-weight: bold;
-
-  line-height: 20px;
-
-  text-align: left;
+  font-weight: 700;
+  line-height: 17px;
 }
-
-/* =========================================================
-   LOGIN
-   ========================================================= */
 
 .simca-login {
-  position: absolute;
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: auto;
-  height: auto;
-
-  margin: 0;
-  padding: 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 114px 16px 150px;
 }
-
-/* Fondo/papel del login */
 
 .login-background {
-  position: relative;
-
   display: flex;
+  width: min(370px, 100%);
+  min-height: 379px;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-
-  width: 320px;
-  min-height: 310px;
-
-  padding: 25px 25px 22px;
-
-  background-image: url("../../../assets/back-login-medium.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 35px 20px 0;
+  background: url("../../../assets/back-login-medium.png") center / 100% 100% no-repeat;
 }
-
-/* =========================================================
-   LOGO SIMCA
-   ========================================================= */
 
 .logo-simca {
   display: block;
-
-  width: auto;
-  height: 75px;
-
-  margin: 0 0 12px;
+  width: 101px;
+  height: auto;
+  margin: 0 0 10px;
 }
 
-/* =========================================================
-   TÍTULO
-   ========================================================= */
-
 .login-title {
-  margin: 0 0 18px;
-
-  color: #222222;
-
-  font-size: 20px;
-  font-weight: 600;
-
-  line-height: 1.2;
-
+  margin: 0 0 0;
+  color: #26467e;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
   text-align: center;
 }
 
-/* =========================================================
-   FORMULARIO
-   ========================================================= */
-
 .login-form {
   display: flex;
+  width: 230px;
   flex-direction: column;
-
-  width: 270px;
-
-  margin: 0;
-  padding: 0;
-
-  gap: 12px;
+  gap: 0;
 }
-
-/* =========================================================
-   INPUTS
-   ========================================================= */
 
 .input-group {
   display: flex;
-  align-items: center;
-
   width: 100%;
-  height: 38px;
-
-  box-sizing: border-box;
-
-  background: #ffffff;
-
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-
+  height: 34px;
+  align-items: center;
   overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 4px #0002;
 }
 
 .icon {
-  flex: 0 0 30px;
-
-  width: 30px;
+  flex: 0 0 34px;
+  width: 34px;
   height: 30px;
-
-  margin-left: 4px;
-
-  background-repeat: no-repeat;
   background-position: center;
-  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  background-size: 34px 30px;
 }
 
 .user-icon {
@@ -230,219 +143,147 @@
 }
 
 .input-group input {
-  flex: 1;
-
   width: 100%;
   height: 100%;
-
-  padding: 0 10px;
-
-  box-sizing: border-box;
-
-  border: none;
-  outline: none;
-
+  min-width: 0;
+  padding: 0 6px;
+  border: 0;
+  outline: 0;
   background: transparent;
-
-  color: #555555;
-
-  font-family: "Segoe UI", Arial, sans-serif;
+  color: #444;
+  font: inherit;
   font-size: 14px;
 }
 
 .input-group input::placeholder {
-  color: #777777;
+  color: #777;
   opacity: 1;
 }
 
-/* =========================================================
-   BOTÓN
-   ========================================================= */
+.input-group:focus-within {
+  border-color: #4799cb;
+  box-shadow: 0 0 0 2px #4799cb33;
+}
 
 .btn-ingresar {
-  width: 100%;
-  height: 36px;
-
-  margin-top: 2px;
-
+  align-self: center;
+  width: 100px;
+  height: 37px;
+  margin: 0 0 10px;
   padding: 0;
-
-  border: 1px solid #d2d2d2;
-  border-radius: 4px;
-
-  background: #dedede;
-
-  color: #333333;
-
-  font-family: "Segoe UI", Arial, sans-serif;
-  font-size: 14px;
-
+  border: 0;
+  background: url("../../../assets/btn-ingresar.png") center / 100px 37px no-repeat;
+  color: #555;
+  font: 700 12px/20px "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
-.btn-ingresar:hover {
-  background: #d0d0d0;
-
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+.btn-ingresar:hover:not(:disabled) {
+  filter: brightness(0.97);
 }
 
-/* =========================================================
-   ANTORCHA
-   ========================================================= */
-
-.antorcha {
-  position: absolute;
-
-  top: 0;
-  right: 10%;
-
-  width: 250px;
-  height: 590px;
-
-  object-fit: contain;
-
-  z-index: 1;
-
-  pointer-events: none;
+.btn-ingresar:disabled {
+  cursor: not-allowed;
 }
 
-/* =========================================================
-   BANDERA
-   ========================================================= */
-
-.bandera {
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 420px;
-  height: auto;
-
-  z-index: 1;
-
-  pointer-events: none;
+.btn-ingresar:focus-visible {
+  outline: 2px solid #4799cb;
+  outline-offset: 2px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+.demo-note {
+  margin: 16px 0 0;
+  color: #555;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
 
 .simca-footer {
   position: absolute;
-
-  left: 50%;
-  bottom: 35px;
-
-  transform: translateX(-50%);
-
-  z-index: 10;
-
-  width: auto;
-
-  margin: 0;
-  padding: 0;
-
+  z-index: 2;
+  right: 16px;
+  bottom: 25px;
+  left: 16px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.55;
   text-align: center;
-
-  font-size: 12px;
-  line-height: 20px;
-
-  white-space: nowrap;
-}
-
-.footer-text {
-  margin: 0;
-  padding: 0;
 }
 
 .footer-text p {
   margin: 0;
-  padding: 0;
 }
 
-.footer-text a {
-  color: #ffffff;
+.simca-footer a {
+  color: inherit;
   text-decoration: none;
 }
 
-.footer-text a:hover {
+.simca-footer a:hover {
   text-decoration: underline;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 768px) {
+@media (max-width: 760px) {
   .simca-container {
-    min-height: 100vh;
+    min-height: 100svh;
+    align-items: flex-start;
+    background-attachment: scroll;
   }
-
-  /* Header */
-
-  .simca-header {
-    top: 20px;
-
-    transform: translateX(-50%) scale(0.85);
-
-    transform-origin: top center;
-  }
-
-  /* Login */
-
-  .simca-login {
-    top: 50%;
-
-    width: 100%;
-  }
-
-  .login-background {
-    width: 300px;
-    min-height: 300px;
-
-    padding: 22px;
-  }
-
-  .login-form {
-    width: 255px;
-  }
-
-  /* Antorcha */
 
   .antorcha {
-    right: -70px;
-
+    right: -80px;
     width: 210px;
     height: 500px;
-
     opacity: 0.55;
   }
 
-  /* Bandera */
-
   .bandera {
-    width: 300px;
+    width: min(300px, 72vw);
   }
 
-  /* Footer */
+  .simca-header {
+    top: 30px;
+    width: 235px;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: translateX(-50%);
+  }
+
+  #logoU {
+    margin: 0 0 0 17px;
+  }
+
+  .separador {
+    display: none;
+  }
+
+  #desc {
+    margin: 0 0 10px;
+    padding-top: 20px;
+    font-size: 16px;
+    line-height: 17px;
+    text-align: left;
+  }
+
+  .simca-login {
+    padding: 216px 14px 145px;
+  }
+
+  .login-background {
+    width: min(320px, 100%);
+    min-height: 379px;
+    padding: 35px 20px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .simca-header {
+    top: 30px;
+  }
 
   .simca-footer {
-    bottom: 20px;
-
-    width: 100%;
-
-    padding: 0 15px;
-
-    box-sizing: border-box;
-
-    white-space: normal;
-
-    font-size: 10px;
-    line-height: 16px;
+    bottom: 12px;
+    font-size: 11px;
   }
 }

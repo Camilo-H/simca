@@ -1,94 +1,74 @@
-<div class="simca-container">
-
-  <!-- Elementos decorativos -->
+<main *ngIf="!isAuthenticated; else studentPortal" class="simca-container">
   <img src="../../../assets/antorcha.png" alt="" class="antorcha" />
   <img src="../../../assets/bandera.png" alt="" class="bandera" />
 
-  <!-- Header -->
   <header class="simca-header">
     <a
       href="http://www.unicauca.edu.co"
       id="logoU"
       aria-label="Universidad del Cauca">
     </a>
-
     <span class="separador"></span>
-
-    <p id="desc">
-      Sistema Integrado de Matrícula y<br />
-      Control Académico
-    </p>
+    <p id="desc">Sistema Integrado de Matrícula y<br />Control Académico</p>
   </header>
 
-  <!-- Login -->
-  <main class="simca-login">
-
+  <section class="simca-login" aria-labelledby="login-title">
     <div class="login-background">
-
       <img
         src="../../../assets/logo-simca.png"
         alt="Logo SIMCA"
         class="logo-simca"
       />
+      <h1 id="login-title" class="login-title">Iniciar Sesión</h1>
 
-      <h2 class="login-title">
-        Iniciar Sesión
-      </h2>
-
-      <form class="login-form">
-
-        <div class="input-group">
-          <span class="icon user-icon"></span>
-
+      <form class="login-form" #loginForm="ngForm" (ngSubmit)="onLogin()">
+        <label class="input-group">
+          <span class="icon user-icon" aria-hidden="true"></span>
           <input
             type="text"
+            name="username"
             placeholder="Usuario"
             aria-label="Usuario"
+            autocomplete="username"
+            required
+            [(ngModel)]="username"
           />
-        </div>
+        </label>
 
-        <div class="input-group">
-          <span class="icon key-icon"></span>
-
+        <label class="input-group">
+          <span class="icon key-icon" aria-hidden="true"></span>
           <input
             type="password"
+            name="password"
             placeholder="Contraseña"
             aria-label="Contraseña"
+            autocomplete="current-password"
+            required
+            [(ngModel)]="password"
           />
-        </div>
+        </label>
 
-        <button
-          type="submit"
-          class="btn-ingresar">
+        <button type="submit" class="btn-ingresar" [disabled]="loginForm.invalid">
           Ingresar
         </button>
-
       </form>
 
+      <p class="demo-note">Demostración local: el acceso y los datos son ficticios.</p>
     </div>
+  </section>
 
-  </main>
-
-  <!-- Footer -->
   <footer class="simca-footer">
-
     <div class="footer-text">
-      <p>
-        2026 | División de Tecnologías de la Información y las Comunicaciones
-      </p>
-
+      <p>2026 | División de Tecnologías de la Información y las Comunicaciones</p>
       <p>
         Universidad del Cauca |
-        <a href="mailto:simca@unicauca.edu.co">
-          simca@unicauca.edu.co
-        </a>
+        <a href="mailto:simca@unicauca.edu.co">simca@unicauca.edu.co</a>
       </p>
-
-      <p>
-        Versión: v2.6.44
-      </p>
+      <p>Versión: v2.6.55</p>
     </div>
-
   </footer>
+</main>
 
-</div>
+<ng-template #studentPortal>
+  <app-principal (logoutRequested)="onLogout()"></app-principal>
+</ng-template>
