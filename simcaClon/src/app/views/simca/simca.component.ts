@@ -4,11 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { PrincipalComponent } from '../principal/principal.component';
 
 @Component({
-  selector: 'app-simca',
-  standalone: true,
-  imports: [CommonModule, FormsModule, PrincipalComponent],
-  templateUrl: './simca.component.html',
-  styleUrls: ['./simca.component.css']
+    selector: 'app-simca',
+    imports: [CommonModule, FormsModule, PrincipalComponent],
+    templateUrl: './simca.component.html',
+    styleUrls: ['./simca.component.css']
 })
 export class SimcaComponent {
   username = '';
