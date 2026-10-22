@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "simcaClon:build:production"
+              "buildTarget": "simcaClon:build:production"
             },
             "development": {
-              "browserTarget": "simcaClon:build:development"
+              "buildTarget": "simcaClon:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simcaClon:build"
+            "buildTarget": "simcaClon:build"
           }
         },
         "test": {
